@@ -1,0 +1,16 @@
+<div class="row" ng-controller="myCtrl">
+
+
+    <input [(ngModel)]="name" #it="ngModel" required>
+    <p>Value: {{ name }}</p>
+    <p>Valid: {{ it.valid }}</p>
+    <button (click)="search()">Set value</button>
+
+
+    <div class="col-md-3 col-xs-6" *ngFor="let character of characters">
+        <app-item-character [character]="character"></app-item-character>
+
+    </div>
+    <div  *ngIf="emptyList">la recherche ne donne rien</div>
+
+
